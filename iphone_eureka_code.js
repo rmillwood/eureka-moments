@@ -10,60 +10,75 @@ function navigateToAppPage(appPageId) {
          }  
 }
 
-var tapOn  = true;
+var tapOn  = false;
 var plugIn = true;
-var manIn  = true;
-var singOn = true;
-var pauseOn= false;
+var manIn  = false;
+var singOn = false;
+var pauseOn= true;
 
 
-var waterlevel = 0;
-var overFlow = false;
-var noOfGraphpoints = 0;
-var manY=-245;
-var graphStart=false;
-textHeight = 16;
 var waterLevel = 0;
-var bathX = 0;
-var showerX = bathX+58;
-var waterHeightLimit=-76;
+maxWaterLevel = 96;
+var flowRate = 0.1;
+var overFlow = false;
+
+var graphStartTime = 0;
+var graphElapsedTime = 0;
+var graphLastTimePoint = 0;
+graphMaxTime = 90000;
+graphIntervalTime= 2000;
+graphPointRadius = 2;
+
+ 
+
 var musicNote=true;
 var musicCount = 0;
 var musicOn=false;
 var switchMusicNotes = false;
 
-var flowGraphic = document.getElementById("flow");
-var plugGraphic = document.getElementById("plug");
-var manGraphic = document.getElementById("man");
-var singGraphic = document.getElementById("sing");
+var waterGraphic = document.getElementById("water");
+var plugGraphic  = document.getElementById("plug");
+var drainGraphic = document.getElementById("drain");
+var manGraphic   = document.getElementById("man");
+var singGraphic  = document.getElementById("sing");
 var note1Graphic = document.getElementById("note1");
 var note2Graphic = document.getElementById("note2");
 var note3Graphic = document.getElementById("note3");
-var flowGraphic = document.getElementById("flow");
+var flowGraphic  = document.getElementById("flow");
 var overflowGraphic = document.getElementById("overflow");
-var drainGraphic = document.getElementById("drain");
+var graphPointsGraphic = document.getElementById("graphPoints");
+var pauseGraphGraphic = document.getElementById("pauseGraph");
+var playGraphGraphic = document.getElementById("playGraph");
  
 // Action button functions
-function tapButtonPressed()  { tapOn  = ! tapOn; updateTap(); }
-function plugButtonPressed() { plugIn = ! plugIn;  updatePlug(); }
-function manButtonPressed()  { manIn  = ! manIn; updateMan();  }
-function singButtonPressed() { singOn = ! singOn;  updateSing(); }
-function pauseButtonPressed(){ pauseOn  = ! pauseOn; updatePause(); }
+function tapButtonPressed()  { if ( ! pauseOn ) { tapOn  = ! tapOn;  updateTap(); }; }
+function plugButtonPressed() { if ( ! pauseOn ) { plugIn = ! plugIn; updatePlug(); }; }
+function manButtonPressed()  { if ( ! pauseOn ) { manIn  = ! manIn;  updateMan(); };  }
+function singButtonPressed() { if ( ! pauseOn ) { singOn = ! singOn; updateSing(); }; }
+function controlGraphButtonPressed() { pauseOn = ! pauseOn; updateGraphControl(); }
 
 
-function updateTap() { if( tapOn ) 
-  flowGraphic.style.display="none"; else 
-  flowGraphic.style.display="block"; 
+function updateTap() { 
+  if( tapOn) {
+    flowGraphic.style.display="block";
+    if ( ! plugIn ) drainGraphic.style.display="block";
+  }  else 
+    flowGraphic.style.display="none";
   };
 
-function updatePlug() { if( plugIn )
-  plugGraphic.setAttribute('transform','translate(0,0)'); else 
-  plugGraphic.setAttribute('transform','translate(0,-8)')
-  };
+function updatePlug() { 
+  if( plugIn) {
+    plugGraphic.setAttribute('transform','translate(0,0)');
+    drainGraphic.style.display="none";
+  } else {
+    plugGraphic.setAttribute('transform','translate(0,-12)')
+    if ( ( waterLevel > flowRate ) || tapOn ) drainGraphic.style.display="block";
+  }
+};
 
 function updateMan() { 
   timeToAnimate = 300;
-  translationYMax = -200;
+  translationYMax = -185;
   var translationy;
   var startTime;
   var elapsedTime;
@@ -79,8 +94,10 @@ function updateMan() {
     if (elapsedTime < timeToAnimate)
       animateManOutFunctionID = requestAnimationFrame(animateManOut); else {
       transformText = 'translate(0,' + translationYMax.toString() + ')';
-      manGraphic.setattribute( 'transform', transformText);
+      manGraphic.setAttribute( 'transform', transformText);
       cancelAnimationFrame(animateManOutFunctionID);
+      waterLevel = waterLevel / 2;
+
       }
   };
   
@@ -91,40 +108,93 @@ function updateMan() {
     transformText = 'translate(0,' + translationY.toString() + ')';
     manGraphic.setAttribute('transform', transformText);
     if (elapsedTime < timeToAnimate) 
-      animateManInFunctionID = requestAnimationFrame(animateManIn); else {
+      animateManInFunctionID = requestAnimationFrame(animateManIn); 
+    else {
       transformText = 'translate(0,0)';
       manGraphic.setAttribute( 'transform', transformText ); 
       cancelAnimationFrame(animateManInFunctionID);
+      waterLevel = Math.min( (waterLevel * 2), maxWaterLevel); 
       }
   };
 
-  if ( manIn ) {
+  if ( manIn) {
     startTime = null;
-    animateManInFunctionID = requestAnimationFrame(animateManIn); 
+    animateManInFunctionID = requestAnimationFrame(animateManIn);
     } else {
     startTime = null;
     animateManOutFunctionID = requestAnimationFrame(animateManOut);
    }
-    
 }
 
-function updateSing() { if( singOn ) {
+
+function updateSing() { if( singOn & manIn & plugIn) {
   singGraphic.style.display="block"} else { 
   singGraphic.style.display="none"; } };
 
-function updatePause() { if( pauseOn ) {
-} else {  } };
+
+function updateGraphControl() { 
+  if( pauseOn ) {
+    pauseGraphGraphic.style.display = "none";
+    playGraphGraphic.style.display = "block";
+  } else { 
+    pauseGraphGraphic.style.display = "block";
+    playGraphGraphic.style.display = "none";
+  } 
+};
 
 
-function modelBath() {
+function animateBath() {
+  if ( ! pauseOn ) {
+    if ( tapOn & ( waterLevel < maxWaterLevel ) ) waterLevel += flowRate;
+    if ( ( ! plugIn ) && ( waterLevel > flowRate ) ) waterLevel -= flowRate;
+    if ( waterLevel >= (maxWaterLevel - flowRate) ) {
+      overflowGraphic.setAttribute( 'display', 'block'); } else {
+      overflowGraphic.setAttribute( 'display', 'none');
+    };
+    if ( (! tapOn ) && ( waterLevel < flowRate ) ) drainGraphic.style.display="none";
+    waterGraphic.setAttribute( 'height', waterLevel );
+    waterGraphic.setAttribute( 'y', ( 878 - maxWaterLevel - waterLevel ) );
+    }; 
+  animateBathID = requestAnimationFrame(animateBath);
+};
 
-if ( tapOn & waterLevel < 103 ) { 
-  waterLevel+=1; 
-  };
-if ( ! plugIn & waterLevel > 0 ) {
-  waterLevel-=1;
-  };
-};  
+
+function animateGraph(timeStamp) {
+  if ( ! pauseOn ) {
+    graphElapsedTime = timeStamp - graphStartTime;
+    if ( graphElapsedTime < graphMaxTime ) {
+      if ( graphElapsedTime > ( graphLastTimePoint + graphIntervalTime ) ) {
+        graphLastTimePoint = graphElapsedTime;
+        plotPoint( 20 + ( graphElapsedTime / 300 ), 80 - ( waterLevel / 1.4 ), 2 )
+      };    
+    } else {
+      while (graphPointsGraphic.firstChild) graphPointsGraphic.removeChild(graphPointsGraphic.firstChild);
+      graphLastTimePoint = 0;
+      graphStartTime = timeStamp;
+      };
+    } else {
+      graphStartTime = timeStamp - graphElapsedTime;
+    }
+  animateGraphID = requestAnimationFrame( animateGraph );
+};
+
+
+function plotPoint( time, level ) {
+  var xmlns = "http://www.w3.org/2000/svg";
+  var point = document.createElementNS(xmlns, "circle"); 
+  point.setAttributeNS(null,"cx",time);
+  point.setAttributeNS(null,"cy",level);
+  point.setAttributeNS(null,"r",graphPointRadius);
+  point.setAttributeNS(null,"fill", "DarkSlateBlue");   
+  graphPointsGraphic.appendChild( point );
+};
+      
+
+
+
+
+
+
 
 
 // A function which is called every 2 seconds 
@@ -313,6 +383,9 @@ function play(){
 //The main Function of the programme.
 //Runs several functions periodically
 var main = function(){
+
+animateBathID = requestAnimationFrame(animateBath);
+animateGraphID = requestAnimationFrame(animateGraph);
 
 }
  
