@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400.00001 574.99999" height="5e2pt" width="3e2pt" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs id="defs4">
+  <filter id="filter8767" style="color-interpolation-filters:sRGB">
+   <feFlood id="feFlood8769" result="flood" flood-opacity=".5" flood-color="rgb(0,0,0)"/>
+   <feComposite id="feComposite8771" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+   <feGaussianBlur id="feGaussianBlur8773" stdDeviation="1.5" result="blur" in="composite1"/>
+   <feOffset id="feOffset8775" result="offset" dx="1" dy="1"/>
+   <feComposite id="feComposite8777" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+  </filter>
+  <filter id="filter8779" style="color-interpolation-filters:sRGB">
+   <feFlood id="feFlood8781" result="flood" flood-opacity=".5" flood-color="rgb(0,0,0)"/>
+   <feComposite id="feComposite8783" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+   <feGaussianBlur id="feGaussianBlur8785" stdDeviation="1.5" result="blur" in="composite1"/>
+   <feOffset id="feOffset8787" result="offset" dx="1" dy="1"/>
+   <feComposite id="feComposite8789" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+  </filter>
+  <filter id="filter8791" style="color-interpolation-filters:sRGB">
+   <feFlood id="feFlood8793" result="flood" flood-opacity=".5" flood-color="rgb(0,0,0)"/>
+   <feComposite id="feComposite8795" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+   <feGaussianBlur id="feGaussianBlur8797" stdDeviation="1.5" result="blur" in="composite1"/>
+   <feOffset id="feOffset8799" result="offset" dx="1" dy="1"/>
+   <feComposite id="feComposite8801" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+  </filter>
+  <filter id="filter8803" style="color-interpolation-filters:sRGB">
+   <feFlood id="feFlood8805" result="flood" flood-opacity=".5" flood-color="rgb(0,0,0)"/>
+   <feComposite id="feComposite8807" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+   <feGaussianBlur id="feGaussianBlur8809" stdDeviation="1.5" result="blur" in="composite1"/>
+   <feOffset id="feOffset8811" result="offset" dx="1" dy="1"/>
+   <feComposite id="feComposite8813" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+  </filter>
+  <filter id="filter8815" style="color-interpolation-filters:sRGB">
+   <feFlood id="feFlood8817" result="flood" flood-opacity=".5" flood-color="rgb(0,0,0)"/>
+   <feComposite id="feComposite8819" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+   <feGaussianBlur id="feGaussianBlur8821" stdDeviation="1.5" result="blur" in="composite1"/>
+   <feOffset id="feOffset8823" result="offset" dx="1" dy="1"/>
+   <feComposite id="feComposite8825" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+  </filter>
+  <filter id="filter8827" style="color-interpolation-filters:sRGB">
+   <feFlood id="feFlood8829" result="flood" flood-opacity=".5" flood-color="rgb(0,0,0)"/>
+   <feComposite id="feComposite8831" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+   <feGaussianBlur id="feGaussianBlur8833" stdDeviation="1.5" result="blur" in="composite1"/>
+   <feOffset id="feOffset8835" result="offset" dx="1" dy="1"/>
+   <feComposite id="feComposite8837" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" transform="translate(0 -5e2)">
+  <g>
+   <rect id="rect6041" height="2e2" width="3e2" y="6e2" x="3e1" fill="#dfdfbf"/>
+   <rect id="drain" fill-opacity=".3" height="1e1" width="3e2" y="8e2" x="3e1" fill="#009fff">
+    <title id="title6093">drain</title>
+   </rect>
+   <rect id="flow" fill-opacity=".3" height="1e2" width="1e1" y="7e2" x="2e2" fill="#009fff">
+    <title id="title5957">flow</title>
+   </rect>
+  </g>
+  <g id="man" transform="translate(-7 1e2)" filter="url(#filter8827)" fill="#e8a197">
+   <title id="title5930">man</title>
+   <g id="g1786" fill="#e8a197" transform="matrix(.4 0 0 .4 8e1 5e2)">
+    <path id="path1788" d="m8e1 1e2c3e1 0 5e1 -2e1 5e1 -5e1s0-5e1 -2e1 -5e1 -5e1 2e1 -5e1 5e1 2e1 5e1 5e1 5e1z"/>
+    <path id="path1790" d="m8e1 5e1"/>
+   </g>
+   <path id="path1792" d="m1e2 6e2c-4-2e1 3e1 -3e1 3e1 -6l8 4e1c1e1 -6 3e1 -2e1 4e1 -2e1 1e1 4 5e1 3e1 5e1 3e1 1e1 1e1 -1 3e1 -1e1 2e1l-4e1 -2e1 -4e1 2e1c-9 5-3e1 8-3e1 -8l-1e1 -6e1z" fill="#e8a197"/>
+  </g>
+  <path id="overflow" d="m6e1 2e2h-2e1v1e2h1e1v-1e2h1e1zm2e2 0v1e2 -1e2z" fill-rule="evenodd" fill-opacity=".3" transform="translate(0 5e2)" fill="#009fff">
+   <title id="title6095">overflow</title>
+  </path>
+  <rect id="water" fill-opacity=".3" height="1e2" width="2e2" y="7e2" x="6e1" fill="#009fff">
+   <title id="title5946">water</title>
+  </rect>
+  <path id="bath" d="m3e2 7e2s0.5-5-6-6c-7 0.3-8 6-8 6v9e1l-1e1 0.004m-2e2 -1e2s-0.5-6 6-6c7 0.2 8 6 8 6v9e1h2e2" filter="url(#filter8803)" stroke="#fff" stroke-linecap="round" stroke-width="8" fill="none">
+   <title id="title6065">bath</title>
+  </path>
+  <g>
+   <path id="path4199" d="m2e2 8e2 -2-9h2e1l-2 9z" fill-rule="evenodd" fill="#3f9f7f"/>
+   <path id="tap" d="m3e2 7e2h-2e1l-0.00005-1e1h1e1c3-1 3-6 0-7h-3e1c-3 1-3 5 0 7h1e1v1e1c-1e1 0.2-2e1 1e1 -2e1 2e1h1e1c0.2-8 2-1e1 9-1e1h3e1z" fill-rule="evenodd" filter="url(#filter8815)" fill="#045fbd">
+    <title id="title5932">tap</title>
+   </path>
+   <path id="note1" d="m2e2 6e2c-9-0.3-2e1 3-2e1 3l-0.005 2e1c-0.9-0.4-2-0.5-3-0.2-2 0.6-4 3-4 5 0.5 2 3 3 5 2 2-0.6 4-2 4-4v-1e1s5-2 1e1 -2v9c-0.9-0.3-2-0.4-3-0.2-2 0.6-4 3-4 5 0.5 2 3 3 5 2 2-0.5 4-2 4-4l0.0008 0.001v-2e1z" filter="url(#filter8791)" fill="#df0000">
+    <title id="title6097">note1</title>
+   </path>
+   <path id="note3" d="m2e2 6e2c-9-0.3-2e1 3-2e1 3l-0.005 2e1c-0.9-0.4-2-0.5-3-0.2-2 0.6-4 3-4 5 0.5 2 3 3 5 2 2-0.6 4-2 4-4v-1e1s5-2 1e1 -2v9c-0.9-0.3-2-0.4-3-0.2-2 0.6-4 3-4 5 0.5 2 3 3 5 2 2-0.5 4-2 4-4l0.0008 0.001v-2e1z" filter="url(#filter8767)" fill="#fcff00">
+    <title id="title6101">note3</title>
+   </path>
+   <path id="note2" d="m2e2 7e2c-9-0.3-2e1 3-2e1 3l-0.005 2e1c-0.9-0.4-2-0.5-3-0.2-2 0.6-4 3-4 5 0.5 2 3 3 5 2 2-0.6 4-2 4-4v-1e1s5-2 1e1 -2v9c-0.9-0.3-2-0.4-3-0.2-2 0.6-4 3-4 5 0.5 2 3 3 5 2 2-0.5 4-2 4-4l0.0008 0.001v-2e1z" filter="url(#filter8779)" fill="#00bf00">
+    <title id="title6099">note2</title>
+   </path>
+  </g>
+ </g>
+</svg>

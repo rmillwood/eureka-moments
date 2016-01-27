@@ -1,0 +1,188 @@
+<<<<<<< Updated upstream
+div #appScreenArea {
+   background-color: grey;
+   }
+
+div#controlDiv {
+	clear: left;
+	float: left;
+	width: 32px;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+	}
+
+div#graphDiv {
+    clear: left;
+	float: left;
+	margin-left: 0.5em;
+    }
+
+div#bathroomDiv {
+	background-color: white;
+	float: left;
+	clear: both;
+	width: 300px;
+	margin-left: 0.5em;
+	}
+
+div#actionEntry {
+	text-align: center;
+	clear: none;
+	float: left;
+	}
+
+form#actionButtons {
+	padding: 0em;
+	}
+		
+input.actionText { 
+	text-align: left; 
+	font-size: 120%; 
+	width: 7em;
+	}
+	
+input.actionButton {
+    font-size: 100%;
+    border: 4px solid;
+    padding:2px;
+=======
+body {
+	margin: 0px;
+	padding: 0px;
+	}
+
+div#appScreenArea {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+   }
+
+div.appPage {
+	font-family: "Arial Rounded MT Bold", sans-serif;
+	line-height: 110%;
+	background-color: white;
+	display: none;
+	clear: both;
+	width 100%;
+	}
+
+div.appPage p, li {
+	font-size:75%;
+	margin: 0px;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-top: 0.5em;
+	text-align: left;
+	}
+
+div#navigation {
+	display: inline-block;
+	clear: both;
+	}
+	
+h1 {
+	float: left;
+	display: block;
+	padding: 0.4em;
+	margin:  0.25em;
+	border: 4px dotted Green;
+	}
+
+div#controlDiv {
+	}
+
+div#graphDiv {
+    }
+
+div#bathroomDiv {
+>>>>>>> Stashed changes
+    }
+
+svg#flipEurekaBathroom {
+	}
+
+#flipTv {
+	fill: DarkSlateGrey;
+	}
+
+#flipBorder {
+	fill: White;
+	}
+
+#flipBoard {
+	fill: Grey;
+	}
+
+#flipPocket {
+	fill: Grey;
+	}
+
+#flipBath {
+	fill: White;
+	}
+
+<<<<<<< Updated upstream
+body {
+	background-color: Black;
+	margin: 0px;
+	}
+
+h1 {
+	float: left;
+	display: block;
+	padding: 0.4em;
+	margin:  0.25em;
+	border: 4px dotted Green;
+	}
+
+div#appScreenArea {
+	width: 320px;
+	height: 460px;
+	}
+
+div.appPage {
+	display: none;
+	width: 320px;
+	height: 395px;
+	font-family: "Arial Rounded MT Bold", sans-serif;
+	line-height: 110%;
+	background-color: White;
+	}
+
+div.appPage p, li {
+	font-size:75%;
+	margin: 0px;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-top: 0.5em;
+	}
+
+div #navigation {
+	width: 100%;
+	height: 65px;
+	text-align:center;
+	}
+
+
+.illustration {
+=======
+illustration {
+>>>>>>> Stashed changes
+	margin: 0.5em;
+	display: inline-block;
+	float: right;
+	}
+
+
+button {
+	font-family: Helvetica ;
+	font-weight: bold ;
+	padding: 0.5em; 
+	border: 2px solid grey ;
+	-moz-border-radius: 8px ;
+	-webkit-border-radius: 8px ;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	background-color: white ;
+	}
